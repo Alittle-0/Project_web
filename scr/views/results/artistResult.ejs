@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head'); %>
+    <link rel="stylesheet" href="/stylesheets/genre.css" />
+    <title><%= title %></title>
+  </head>
+  <body>
+    <div class="web">
+      <header class="header"><%- include('../partials/header'); %></header>
+      <main id="container">
+        <div class="wrapper">
+          <section class="three">
+
+            <div class="searched">
+
+              <img src="/images/<%= artist.title %>.jpg" onerror="this.onerror=null; this.src='images/null.png'" alt="<%= artist.artist %>'s image">
+
+              <div class="searchedInfo">
+                <h1><%= artist.artist %></h1>
+                <p><strong>Genres:</strong> <%= artist.genre.join(", ") %></p>
+              </div>
+
+            </div>
+
+            <div class="infoResult">
+              <h1>Music by <%= artist.artist %></h1>
+              <% if (artistMusics && artistMusics.length > 0) { %>
+                <ul>
+                  <% artistMusics.forEach(function(music) { %>
+                    <li>
+                      <strong>Song:</strong> <%= music.song %><br>
+                      <strong>Genres:</strong> <%= music.genre.join(", ") %>
+                    </li>
+                  <% }); %>
+                </ul>
+              <% } else { %>
+                <p>No music found for this artist.</p>
+              <% } %>
+            </div>
+
+          </section>
+
+          <!-- Section for Similar Artists and Their Music -->
+          <section class="four">
+            <h1>Similar Artists and Their Music</h1>
+            <% 
+              const filteredGenreMusics = genreMusics.filter(music => 
+                music.artist !== artist.artist &&
+                music.genre.some(genre => artist.genre.includes(genre))
+              );
+            %>
+            <% if (filteredGenreMusics.length > 0) { %>
+              <ul>
+                <% filteredGenreMusics.forEach(function(music) { %>
+                  <li>
+                    <strong>Song:</strong> <%= music.song %><br>
+                    <strong>Artist:</strong> <%= music.artist %><br>
+                    <strong>Genres:</strong> <%= music.genre.join(", ") %>
+                  </li>
+                <% }); %>
+              </ul>
+            <% } else { %>
+              <p>No similar music found in these genres.</p>
+            <% } %>
+          </section>
+        </div>
+      </main>
+      <footer class="footer"><%- include('../partials/footer'); %></footer>
+    </div>
+    <%- include('../partials/script'); %>
+  </body>
+</html>

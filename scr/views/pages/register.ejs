@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head'); %>
+  </head>
+  <body>
+    <div class="web-register">
+      <header class="header">
+        <%- include('../partials/header'); %>
+        <link rel="stylesheet" href="./stylesheets/register.css" />
+      </header>
+
+      <main class="container">
+        <section class="one">
+          <h1 class="one_signup">Your Account</h1>
+          <form action="" method="post" class="one_form" id="one_form">
+            <div class="form-group">
+              <label for="email" class="form-label">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="text"
+                placeholder="example@uit.com"
+                class="form-control"
+              />
+              <span id="email-error" class="form-message"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="username" class="form-label">User name</label>
+              <input
+                id="username"
+                name="username"
+                type="text"
+                placeholder="Create a name"
+                class="form-control"
+              />
+              <span class="form-message"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="password" class="form-label">Password</label>
+              <input
+                id="password"
+                name="password"
+                type="password"
+                placeholder="Create a password"
+                class="form-control"
+              />
+              <i
+                id="toggle"
+                class="fa-solid fa-eye"
+                onclick="changeTypePass('password','toggle')"
+              ></i>
+              <span class="form-message"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="password-confirmation" class="form-label"
+                >Confirm Password</label
+              >
+              <input
+                id="password-confirmation"
+                name="password-confirmation"
+                type="password"
+                placeholder="Re-enter your password"
+                class="form-control"
+              />
+              <i
+                id="toggle-confirmation"
+                class="fa-solid fa-eye"
+                onclick="changeTypePass('password-confirmation', 'toggle-confirmation')"
+              ></i>
+              <span class="form-message"></span>
+            </div>
+            
+            <button class="form-submit" type="submit">Sign up</button>
+            
+            <nav class="navRegister">
+              <a href="login">OLD? Click here</a>
+            </nav>
+          </form>
+        </section>
+        
+        <%- include('../partials/script'); %>
+        <script src="/javascripts/user/register.js"></script>
+        <script>
+          //Output
+          Validator({
+            form: "#one_form",
+            formGroupSelector: ".form-group",
+            errorSelector: ".form-message",
+            rules: [
+              Validator.isRequired("#email", "Fill email"),
+              Validator.isEmail("#email", "Email is not correct"),
+              Validator.isRequired("#username", "Fill your name"),
+              Validator.isRequired("#password", "Password must be at least 6 chars"),
+              Validator.isminLength("#password", 6),
+              Validator.isRequired("#password-confirmation", "Password must match"),
+              Validator.isConfirmed(
+                "#password-confirmation",
+                function () {
+                  return document.querySelector("#one_form #password").value;
+                },
+                "The filled is not correct"
+              ),
+            ],
+            onSubmit: function(data) {Creation(data)},});
+        </script>
+      </main>
+
+      <footer class="footer"><%- include('../partials/footer'); %></footer>
+    </div>
+  </body>
+</html>

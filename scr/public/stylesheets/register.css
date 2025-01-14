@@ -1,0 +1,143 @@
+.web-register {
+  background-color: #f4f4f4;
+}
+.container {
+  margin: 0 10%;
+  padding-top: 83.5px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+/*section 1*/
+
+.one {
+  padding: 50px;
+  margin-top: 50px;
+  background-color: var(--white-color);
+}
+.one h1 {
+  background-color: var(--white-color);
+  padding: 0;
+  margin: 0 0 3rem;
+  font-weight: 500;
+  line-height: 0;
+  font-size: 3rem;
+  color: var(--black-color);
+}
+.one_form {
+  width: 360px;
+  min-height: 100px;
+  padding: 30px;
+  padding-bottom:0 ;
+  text-align: center;
+  background: #f4f4f4;
+  border-radius: 2px;
+  align-self: center;
+  box-shadow: 0 2px 5px 0 rgba(51, 62, 73, 0.1);
+  line-height: 10rem;
+  font-size: 1.4rem;
+}
+.form-group {
+  display: flex;
+  margin-bottom: 16px;
+  flex-direction: column;
+  position: relative;
+}
+
+.form-label,
+.form-message {
+  text-align: left;
+}
+
+.form-label {
+  font-weight: 700;
+  padding-bottom: 6px;
+  line-height: 1.8rem;
+  font-size: 1.4rem;
+  color: var(--black-color);
+}
+
+.form-control {
+  height: 40px;
+  padding: 8px 12px;
+  border: 1px solid #b3b3b3;
+  border-radius: 3px;
+  outline: none;
+  font-size: 1.4rem;
+}
+
+.form-control:hover {
+  border-color: #1dbfaf;
+}
+.form-group.invalid .form-control {
+  border-color: #f33a58;
+}
+
+.form-group.invalid .form-message {
+  color: #f33a58;
+}
+
+.form-message {
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  padding: 4px 0 0;
+}
+.form-group i{
+    position: absolute;
+    top: 37px;
+    right: 13.5px;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    color: #333;
+}
+
+.form-submit {
+  outline: none;
+  background-color: #1dbfaf;
+  margin-top: 12px;
+  padding: 12px 16px;
+  font-weight: 600;
+  color: #fff;
+  border: none;
+  width: 100%;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.navRegister {
+  display: flex;
+  max-height: fit-content;
+  align-items: center;
+  line-height: 20px;
+}
+.navRegister a{
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.form-submit:hover {
+  background-color: #1ac7b6;
+}
+footer {
+  background-color: #fad06c;
+}
+.create-selector{
+  background-color: var(--white-color);
+  border-radius: 3px;
+}
+.artist-name{
+  display: flex;
+  justify-content:space-between;
+  padding: 10px 15px;
+  color: black;
+  margin: 0;
+  cursor: pointer;
+}
+.artist-name:hover{
+  background-color: rgb(189, 188, 188);
+}

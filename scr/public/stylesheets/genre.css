@@ -1,0 +1,203 @@
+/*body*/
+#container {
+  background-color: var(--purple-ish-black);
+}
+.wrapper {
+  margin: 0px 200px;
+  padding-top: 83.5px 0;
+  background-color: var(--light-purple-ish);
+}
+
+/*section 1*/
+.one {
+  padding: 100px 0;
+  justify-items: center;
+  margin-top: 0;
+  background-color: var(--search-wrap-color);
+}
+
+/*search bar*/
+.one_searchbar {
+  height: 40px;
+  width: 70%;
+  background-color: var(--slight-off-white);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.one_searchbar-input-warp {
+  flex: 1;
+  height: 100%;
+  position: relative;
+}
+.one_searchbar-input:focus ~ .one_searchbar-history {
+  display: block;
+}
+
+.one_searchbar-history:hover {
+  display: block;
+}
+
+.one_searchbar-input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 1.4rem;
+  color: black;
+  padding: 0 0 0 12px;
+  border-radius: 5px;
+}
+
+/*history*/
+.one_searchbar-history {
+  position: absolute;
+  top: calc(100% + 3px);
+  left: 0;
+  width: calc(100% - 16px);
+  background-color: var(--white-color);
+  border-radius: 3px;
+  box-shadow: 0 0 3px #c5c5c5;
+  display: none;
+  overflow: hidden;
+}
+.one_searchbar-history h4 {
+  margin: 12px 12px 0;
+  font-size: 1.4rem;
+  color: #999;
+  font-weight: 400;
+  height: 30px;
+}
+.one_searchbar-history_list {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+.one_searchbar-history_item {
+  padding: 0 12px;
+}
+.one_searchbar-history_item:hover {
+  background-color: #fafafa;
+}
+.one_searchbar-history_item a {
+  text-decoration: none;
+  font-size: 1.4rem;
+  color: black;
+  line-height: 30px;
+  display: flex;
+  align-items: center;
+}
+/*search button*/
+.one_searchbar-button {
+  padding: 8px 20px;
+  margin: 5px 5px 5px 0;
+  border: 0px;
+  border-radius: 5px;
+}
+.one_searchbar-button-icon {
+  font-size: 1.4rem;
+  color: black;
+}
+.one_searchbar-button:hover {
+  cursor: pointer;
+  i {
+    color: var(--white-color);
+  }
+}
+footer {
+  overflow: hidden;
+}
+
+/*section two*/
+.info h1 {
+  background-color: var(--lighter-purple-ish);
+  margin: 0px;
+  padding: 20px;
+  max-width: auto;
+  font-size: 25px;
+}
+.info h1 i {
+  padding-right: 10px;
+}
+.info p {
+  margin: 25px;
+  font-size: 15px;
+  line-height: 2.4;
+}
+.info li {
+font-size: 15px;
+line-height: 2.4;
+}
+
+/*section three*/
+.three {
+  padding: 100px 50px;
+  margin-top: 0;
+}
+.three img {
+  width: 250px;
+  height: auto;
+  margin: 0 auto 20px;
+}
+.three .searched {
+  display: flex;
+  flex-direction: row;
+}
+.three .searchedInfo {
+  margin: 20px;
+  text-align: center;
+  padding: 25px;
+}
+.three .searchedInfo h1 {
+  font-size: 40px;
+}
+.three .searchedInfo h2 {
+  font-size: 30px;
+}
+.three .searchedInfo p {
+  font-size: 25px;
+}
+.infoResult ul {
+  font-size: 16px;
+}
+.infoResult h1 {
+  font-size: 35px;
+}
+.infoResult ul, 
+section.four ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.infoResult ul li, 
+section.four ul li {
+  flex: 0 1 calc(25% - 20px); /* 4 items per row with a 20px gap */
+  margin: 10px;
+}
+
+.four {
+  padding:50px;
+}
+.four h1 {
+  font-size: 35px;
+}
+.four ul {
+  font-size: 16px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .info ul li, 
+  section.four ul li {
+    flex: 0 1 calc(50% - 20px); /* 2 items per row on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .info ul li, 
+  section.four ul li {
+    flex: 0 1 100%; /* 1 item per row on extra small screens */
+  }
+}

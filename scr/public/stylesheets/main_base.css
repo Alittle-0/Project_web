@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  -moz-box-sizing: inherit;
+}
+
+html {
+  scroll-behavior: smooth;
+  touch-action: manipulation;
+  font-family: "Lato", sans-serif;
+  font-size: 62.5%;
+  line-height: 1.5;
+}
+
+body {
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  overscroll-behavior: none;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -webkit-user-drag: none;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-box-sizing: border-box;
+  -ms-content-zooming: none;
+  unicode-bidi: embed;
+}

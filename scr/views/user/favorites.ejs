@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head'); %>
+    <link rel="stylesheet" href="/stylesheets/genre.css" />
+  </head>
+  <body>
+    <div class="web">
+      <header class="header"><%- include('../partials/header'); %></header>
+      <main class="container">
+        <!--searching-->
+        <section class="one">
+          <h1>Finding Music Genre</h1>
+          <div class="one_searchbar">
+            <div class="one_searchbar-input-warp">
+              <input
+                type="text"
+                class="one_searchbar-input"
+                placeholder="type here"
+              />
+              <div class="one_searchbar-history">
+                <h4>Lich su tim kiem</h4>
+                <ul class="one_searchbar-history_list">
+                  <li class="one_searchbar-history_item">
+                    <a href="">rock</a>
+                  </li>
+                  <li class="one_searchbar-history_item">
+                    <a href="">luck</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="one_searchbar-select">
+              <span class="one_searchbar-label">Style</span>
+              <i class="one_searchbar-icon fa-solid fa-chevron-down"></i>
+              <ul class="one_searchbar-option">
+                <li class="one_searchbar-option_item">
+                  <span>rock</span>
+                </li>
+                <li class="one_searchbar-option_item">
+                  <span>rockdsg,fsdklfnsdjnk</span>
+                </li>
+                <li class="one_searchbar-option_item">
+                  <span>rock</span>
+                </li>
+              </ul>
+            </div>
+            <button class="one_searchbar-button">
+              <i
+                class="one_searchbar-button-icon fa-solid fa-magnifying-glass"
+              ></i>
+            </button>
+          </div>
+        </section>
+
+        <section class="two">
+          <div class="genre">
+            <div class="about-genre">
+              <img src="/images/1.jfif" />
+              <div class="basic-infor">
+                <h4>Rock</h4>
+                <p>vndshjvh</p>
+              </div>
+            </div>
+            <div class="information">
+              <h4>About genre</h4>
+              <p>
+                Rock music is a genre characterized by its heavy use of electric
+                guitars, drums, and bass. It often features powerful vocals and
+                lyrics that touch on themes of rebellion, love, and angst. This
+                genre has evolved over time, with sub-genres such as alternative
+                rock, indie rock, and classic rock. Some of the defining
+                characteristics of rock music include its high energy, catchy
+                melodies, and memorable hooks. It has been a popular genre for
+                decades, with bands like Imagine Dragons, Arctic Monkeys, and
+                Queen being some of the most well-known and influential in the
+                industry.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="three">
+          <div class="genre-artist">
+            <h4>Rock artists</h4>
+            <div class="artists">
+              <div class="artist-one">
+                <img src="/images/Lover.jpg" style="width: 200; height: 200px" />
+                <p class="name-of-artist">Lover</p>
+              </div>
+              <div class="artist-one">
+                <img src="/images/Lover.jpg" style="width: 200; height: 200px" />
+                <p class="name-of-artist">Lover</p>
+              </div>
+              <div class="artist-one">
+                <img src="/images/Lover.jpg" style="width: 200; height: 200px" />
+                <p class="name-of-artist">Lover</p>
+              </div>
+              <div class="artist-one">
+                <img src="/images/Lover.jpg" style="width: 200; height: 200px" />
+                <p class="name-of-artist">Lover</p>
+              </div>
+              <div class="artist-one">
+                <img src="/images/Lover.jpg" style="width: 200; height: 200px" />
+                <p class="name-of-artist">Lover</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="four">
+          <div class="genre-song">
+            <h4>Rock song</h4>
+            <ul class="song">
+              <li class="song-one">
+                <img src="/images/Lover.jpg" style="width: 50; height: 50px" />
+                <p class="name-of-artist">Lover</p>
+              </li>
+              <li class="song-one">
+                <img src="/images/Lover.jpg" style="width: 50; height: 50px" />
+                <p class="name-of-artist">Lover</p>
+              </li>
+              <li class="song-one">
+                <img src="/images/Lover.jpg" style="width: 50; height: 50px" />
+                <p class="name-of-artist">Lover</p>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <% musics.forEach(music => { %>
+          <ul>
+            <li><%= music.name %></li>
+            <li><%= music.artist %></li>
+            <li><%= music.image %></li>
+            <li><%= music.description %></li>
+          </ul>
+        <% }) %>
+      </main>
+
+      <%- include('../partials/script'); %>
+
+      <footer class="footer"><%- include('../partials/footer'); %></footer>
+    </div>
+  </body>
+</html>

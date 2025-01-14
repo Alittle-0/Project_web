@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head'); %>
+  </head>
+  <body>
+    <div class="web-register">
+      <header class="header">
+        <%- include('../partials/header'); %>
+        <link rel="stylesheet" href="/stylesheets/register.css" />
+      </header>
+
+      <main class="container">
+        <section class="one">
+          <h1 class="one_signup">Add a genre here:</h1>
+          <form
+            action="/user/storeGenre"
+            method="post"
+            class="one_form"
+            id="one_form"
+          >
+          <div class="form-group">
+            <label for="genre" class="form-label">Genre</label>
+            <input
+              id="genre"
+              name="genre"
+              type="text"
+              placeholder="kjndv"
+              class="form-control"
+            />
+          </div>
+            <div class="form-group">
+              <label for="artist" class="form-label">Description</label>
+              <input
+                id="desc"
+                name="desc"
+                type="text"
+                placeholder="kjndv"
+                class="form-control"
+              />
+            </div>
+
+            <button class="form-submit" type="submit">Submit</button>
+          </form>
+        </section>
+      </main>
+
+      <%- include('../partials/script'); %>
+
+      <footer class="footer"><%- include('../partials/footer'); %></footer>
+    </div>
+  </body>
+</html>

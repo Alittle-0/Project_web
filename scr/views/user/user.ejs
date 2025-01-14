@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head'); %>
+    <link rel="stylesheet" href="/stylesheets/genre.css" />
+  </head>
+  <body>
+    <div class="web">
+      <header class="header"><%- include('../partials/header'); %></header>
+      
+      <main class="container">
+        
+        <section class="one">
+          <img src="/images/avatar.png" alt="avatar" style="width: 100px; height: 100px;">
+          <p><%= username %></p>
+          <h1>User Details</h1>
+          <ul>
+            <li>Email: <%= email %></li>
+            <li>Username: <%= username %></li>
+          </ul>
+          <button class=""><a href="/user/create">Add song</a></button>
+          <button class=""><a href="/user/createArtist">Add artist</a></button>
+          <button class=""><a href="/user/createGenre">Add genre</a></button>
+        <%- include('../partials/script'); %>
+        <button class="" onclick="Remove()">Delete</button>
+        <% if (admin) { %>
+          <script src="/javascripts/admin.js"></script>
+          <section id="admin" class="admin">
+            <h1>Controller</h1>
+            <form action="" id="admin-form">
+              <div class="form-group">
+                <label for="email" class="form-label">Email</label>
+                <input
+                id="email"
+                name="email"
+                type="text"
+                placeholder="vjsfhseivjklesrng"
+                class="form-control"
+                />
+                <span id="email-error" class="form-message"></span>
+              </div>
+              
+              <button type="submit" class="form-submit">Delete</button>
+            </form>
+            
+            <script>
+              Admin({
+                form: "admin-form",
+                onSubmit: async function (data) {
+                  UserDelete(data);
+                },
+              });
+              </script>
+        <% } %>
+      </section>
+        
+        
+      </main>
+
+      <footer class="footer"><%- include('../partials/footer'); %></footer>
+    </div>
+  </body>
+</html>

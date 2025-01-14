@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head'); %>
+    <link rel="stylesheet" href="/stylesheets/genre.css" />
+  </head>
+  <body>
+    <div class="web">
+      <header class="header"><%- include('../partials/header'); %></header>
+      <main id="container">
+        <div class="wrapper">
+
+          <section class="one">
+            <h1>Delve into a new rythm</h1>
+            <div class="one_searchbar">
+              <div class="one_searchbar-input-warp">
+                <input
+                  type="text"
+                  id="search"
+                  class="one_searchbar-input"
+                  placeholder="type here"
+                  oninput="search('song')"
+                />
+                <div class="one_searchbar-history" id="searchResult">
+                  <h4 id="heading">...</h4>
+                </div>
+              </div>
+              
+              <button class="one_searchbar-button">
+                <i
+                  class="one_searchbar-button-icon fa-solid fa-magnifying-glass"
+                ></i>
+              </button>
+            </div>
+            
+          </section>
+
+          <section class="two">
+            <div class="info">
+              <h1><i class="fa-solid fa-circle-exclamation"></i>About songs search</h1>
+              <p>Explore the rhythms of your favorite tracks!<br>
+                Our platform allows you to search for any song and dive deep into its details. With just a simple search, you can uncover:<br></p>
+                
+                <ul>
+                  <li><b>The Song Details:</b> See the song title, its genre, and the creator behind it.</li>
+                  <li><b>Similar Songs:</b> Discover tracks that share the same vibe and genre.</li>
+                </ul>
+                
+                <p>Start your musical journey and discover the sounds you'll love!</p>
+                
+
+            </div>
+          </section>
+
+          <section class="three">
+
+          </section>
+
+          <section class="four">
+            
+          </section>
+        </div>
+      </main>
+
+      <script>
+        const songs = <%- JSON.stringify(songs) %> ;
+      </script>
+
+      <%- include('../partials/script'); %>
+      <footer class="footer"><%- include('../partials/footer'); %></footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head'); %>
+    <link rel="stylesheet" href="/stylesheets/genre.css" />
+    <title><%= title %></title>
+  </head>
+<body>
+  <div class="web">
+    <header class="header"><%- include('../partials/header'); %></header>
+    <main id="container">
+      <div class="wrapper">
+
+        <!-- Section for Searched Song -->
+        <section class="three">
+          <div class="searched">
+            <img src="/images/<%= song.title %>.jpg" onerror="this.onerror=null; this.src='/images/null.png'" alt="<%= song.song %>">
+            <div class="searchedInfo">
+              <h1><%= song.song %></h1>
+              <p><strong>Genres:</strong> <%= song.genre.join(", ") %></p>
+              <% songMusics.forEach(function(music) { %>
+                <p><strong>Creator:</strong> <%= music.artist %></p>
+              <% }); %>
+            </div>
+          </div>
+
+          <!-- Display Same Song Info -->
+          <div class="infoResult">
+            <h1>Songs by the Same Creator</h1>
+            <% if (songMusics.length > 0) { %>
+              <ul>
+                <% songMusics.forEach(function(music) { %>
+                  <li>
+                    <strong>Song:</strong> <%= music.song %><br>
+                    <strong>Genres:</strong> <%= music.genre.join(", ") %>
+                  </li>
+                <% }); %>
+              </ul>
+            <% } else { %>
+              <p>No additional songs found for this creator.</p>
+            <% } %>
+          </div>
+        </section>
+
+        <!-- Section for Similar Songs -->
+        <section class="four">
+          <h1>Songs Similar to "<%= song.song %>"</h1>
+          <% 
+            const filteredGenreMusics = genreMusics.filter(music => 
+              music.song !== song.song &&
+              music.genre.some(genre => song.genre.includes(genre))
+            );
+          %>
+          <% if (filteredGenreMusics.length > 0) { %>
+            <ul>
+              <% filteredGenreMusics.forEach(function(music) { %>
+                <li>
+                  <strong>Song:</strong> <%= music.song %><br>
+                  <strong>Creator:</strong> <%= music.artist %><br>
+                  <strong>Genres:</strong> <%= music.genre.join(", ") %>
+                </li>
+              <% }); %>
+            </ul>
+          <% } else { %>
+            <p>No similar songs found in these genres.</p>
+          <% } %>
+        </section>
+
+      </div>
+    </main>
+    <footer class="footer"><%- include('../partials/footer'); %></footer>
+  </div>
+  <%- include('../partials/script'); %>
+</body>
+</html>

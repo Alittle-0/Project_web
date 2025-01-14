@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head'); %>
+    <link rel="stylesheet" href="/stylesheets/genre.css" />
+  </head>
+  <body>
+    <div class="web">
+      <header class="header"><%- include('../partials/header'); %></header>
+      <main id="container">
+        <div class="wrapper">
+
+          <section class="one">
+            <h1>Explore artists similar to the one you like</h1>
+            <div class="one_searchbar">
+              <div class="one_searchbar-input-warp">
+                <input
+                  type="text"
+                  id="search"
+                  class="one_searchbar-input"
+                  placeholder="type here"
+                  oninput="search('artist')"
+                />
+                <div class="one_searchbar-history" id="searchResult">
+                  <h4 id="heading">...</h4>
+                </div>
+              </div>
+              
+              <button class="one_searchbar-button">
+                <i
+                  class="one_searchbar-button-icon fa-solid fa-magnifying-glass"
+                ></i>
+              </button>
+            </div>
+            
+          </section>
+
+          <section class="two">
+            <div class="info">
+              <h1><i class="fa-solid fa-circle-exclamation"></i>About artists search</h1>
+              <p>Discover the world of music like never before!<br>
+                Our platform allows you to search for your favorite artist and instantly explore their musical journey. With just a few clicks, you can uncover:<br></p>
+
+                <ul>
+                  <li><b>Their Main Genre:</b> Understand the style that defines their music.</li>
+                  <li><b>Top Songs:</b> Dive into the tracks that made them iconic.</li>
+                  <li><b>Similar Artists:</b> Find other musicians who share their genre and expand your playlist.</li>
+                </ul>
+                
+                <p>Start exploring and let the music take you places!</p>
+
+            </div>
+          </section>
+
+          <section class="three">
+
+          </section>
+
+          <section class="four">
+            
+          </section>
+        </div>
+      </main>
+
+      <script>
+        const artists = <%- JSON.stringify(artists) %> ;
+      </script>
+
+      <%- include('../partials/script'); %>
+      <footer class="footer"><%- include('../partials/footer'); %></footer>
+    </div>
+  </body>
+</html>

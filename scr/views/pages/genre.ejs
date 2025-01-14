@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head'); %>
+    <link rel="stylesheet" href="/stylesheets/genre.css" />
+  </head>
+  <body>
+    <div class="web">
+      <header class="header"><%- include('../partials/header'); %></header>
+      <main id="container">
+        <div class="wrapper">
+
+          <section class="one">
+            <h1>Expand your taste in music</h1>
+            <div class="one_searchbar">
+              <div class="one_searchbar-input-warp">
+                <input
+                  type="text"
+                  id="search"
+                  class="one_searchbar-input"
+                  placeholder="type here"
+                  oninput="search('genre')"
+                />
+                <div class="one_searchbar-history" id="searchResult">
+                  <h4 id="heading">...</h4>
+                </div>
+              </div>
+              
+              <button class="one_searchbar-button">
+                <i
+                  class="one_searchbar-button-icon fa-solid fa-magnifying-glass"
+                ></i>
+              </button>
+            </div>
+            
+          </section>
+
+          <section class="two">
+            <div class="info">
+              <h1><i class="fa-solid fa-circle-exclamation"></i>About genres search</h1>
+              <p>Immerse yourself in the world of music genres!<br>
+                Our platform allows you to explore any genre and discover its unique essence. With a simple search, you can uncover:<br></p>
+                
+                <ul>
+                  <li><b>Genre Description:</b> Learn about the characteristics that define each genre.</li>
+                  <li><b>Specialized Artists:</b> Discover talented artists who bring the genre to life.</li>
+                </ul>
+                
+                <p>Start exploring and uncover the sounds that define your favorite genres!</p>
+                
+                
+
+            </div>
+          </section>
+
+          <section class="three">
+
+          </section>
+
+          <section class="four">
+            
+          </section>
+        </div>
+      </main>
+
+      <script>
+        const genres = <%- JSON.stringify(genres) %> ;
+      </script>
+
+      <%- include('../partials/script'); %>
+      <footer class="footer"><%- include('../partials/footer'); %></footer>
+    </div>
+  </body>
+</html>

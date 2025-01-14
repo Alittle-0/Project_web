@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <head>
+    <%- include('../partials/head'); %>
+    <link rel="stylesheet" href="/stylesheets/genre.css" />
+    <title><%= title %></title>
+  </head>
+</head>
+<body>
+  <div class="web">
+    <header class="header"><%- include('../partials/header'); %></header>
+    <main id="container">
+      <div class="wrapper">
+
+        <!-- Genre Info Section -->
+        <section class="three">
+
+          <div class="searchedInfo">
+            <h1>Genre: <%= genre.title %></h1>
+            <h2>Description: <%= genre.desc %></h2>
+          </div>
+
+          <div class="infoResult">
+            <h1>Songs in <%= genre.title %></h1>
+              <ul>
+                <% if (genreMusics.length > 0) { %>
+                  <% genreMusics.forEach(function(music) { %>
+                    <li>
+                      <strong>Song:</strong> <%= music.song %><br>
+                      <strong>Artist:</strong> <%= music.artist %>
+                    </li>
+                  <% }); %>
+                <% } else { %>
+                  <li>No songs found in this genre.</li>
+                <% } %>
+              </ul>
+          </div>
+
+        </section>
+
+
+
+
+        
+
+        <section class="four">
+          <h1>Artists Specializing in <%= genre.title %></h1>
+            <ul>
+              <% if (artistNames.length > 0) { %>
+                <% artistNames.forEach(function(artist) { %>
+                  <li><%= artist %></li>
+                <% }); %>
+              <% } else { %>
+                <li>No artists found for this genre.</li>
+              <% } %>
+            </ul>
+        </section>
+
+
+      </div>
+    </main>
+    <footer class="footer"><%- include('../partials/footer'); %></footer>
+  </div>
+  <%- include('../partials/script'); %>
+</body>
+</html>
